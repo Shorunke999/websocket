@@ -21,6 +21,13 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->text('message');
+            $table->timestamps();
+            $table ->foreign("user_id")->references('id')->on('users');
+        });
     }
 
     /**
@@ -29,5 +36,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('comments');
     }
 };

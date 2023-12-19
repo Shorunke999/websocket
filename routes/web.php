@@ -23,10 +23,8 @@ Route::get('/', function () {
     return view('chat');
 });
 Route::post('/message', function (Request $req) {
-    $we = $req->message;
-    /*$aa = new User();
-    $ab = $aa->factory()->create();
-    $ac = $aa->message = $req-> message;
-   // event( new messag_event($req->message));*/
+    $aa = new User();
+    $aa->factory()->create(); 
     return null;
 });
+ 
