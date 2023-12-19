@@ -39,4 +39,8 @@ class messag_event implements ShouldBroadcast
             'message' => $this->message
         ];
     }
+    public function broadcastAs()
+    {
+        return 'message_event';
+    }
 }
