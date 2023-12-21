@@ -13,8 +13,8 @@ form.addEventListener('submit',(e)=>{
    const channel = Echo.channel('first_channnel');
    channel.subscribed(()=>{
    console.log('suscribed to channel');
-   }).listen('.message_event', (event)=>{
-   consloe.log(event);
+   }).listen('.message_event', (e)=>{
+   consloe.log(e);
    const ultag = document.getElementById('ul');
    const li = document.createElement('li');
    const newmessage = event.message;

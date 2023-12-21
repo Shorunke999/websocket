@@ -23,8 +23,10 @@ Route::get('/', function () {
     return view('chat');
 });
 Route::post('/message', function (Request $req) {
-    $message = $req->message;
-    event(new messag_event($message));
+    $we = $req->message;
+    $one = User::Findorfail(2);
+    $one ->method()->create(['message'=> $we]);
+    broadcast(new messag_event($message));
     return null;
 });
  
