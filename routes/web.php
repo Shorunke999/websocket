@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::post('/message', function (Request $req) {
     $we = $req->message;
     $one = User::Findorfail(2);
-    $one ->method()->create(['message'=> $we]);
+    $one ->comments()->create(['message'=> $we]);
     broadcast(new messag_event($message));
     return null;
 });

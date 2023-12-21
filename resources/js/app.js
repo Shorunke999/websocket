@@ -17,8 +17,8 @@ form.addEventListener('submit',(e)=>{
    consloe.log(e);
    const ultag = document.getElementById('ul');
    const li = document.createElement('li');
-   const newmessage = event.message;
-   li.textContent('newmessage');
+   const newmessage = e.message;
+   li.textContent(newmessage);
    ultag.append(li);
       });//end of echo object
 
