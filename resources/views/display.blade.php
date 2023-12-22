@@ -11,14 +11,9 @@
     <div>
         <div>
             <ul id = 'ul'>
-                    
+            
+                <li>message - {{$aa->name}}</li>
             </ul>
-            <form id="form">
-                <label for="message">
-                    ENTER YOUR message
-                </label>
-                <input  id='input' type="text" name="message" placeholder="">
-            </form>
         </div>
     </div>
 </body>

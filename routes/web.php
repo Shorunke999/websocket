@@ -23,10 +23,17 @@ Route::get('/', function () {
     return view('chat');
 });
 Route::post('/message', function (Request $req) {
-    $we = $req->message;
-    $one = User::Findorfail(2);
-    $one ->comments()->create(['message'=> $we]);
+    $message = $req->message;
+    $one = User::find(2); //this line is use to auth user and get it id...$kk = Auth::user();...$kk->id;
+    $one ->comment()->create(['message'=> $message]);
     broadcast(new messag_event($message));
     return null;
+});
+Route::get('/display', function () {
+   //$kk = Auth::user(); 
+    if($kk = true){
+        $aa = User::find(2);
+        return view('display', ['aa'=>$aa]);
+    }
 });
  

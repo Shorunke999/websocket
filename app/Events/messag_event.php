@@ -13,7 +13,7 @@ use Illuminate\Queue\SerializesModels;
 class messag_event implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    protected $message;
+    public $message;
     /**
      * Create a new event instance.
      */
