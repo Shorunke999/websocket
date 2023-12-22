@@ -11,8 +11,18 @@
     <div>
         <div>
             <ul id = 'ul'>
-            
-                <li>message - {{$aa->name}}</li>
+                @foreach ($ak as $as)
+                <div id = '' class="">
+                    <a href='{{route('message')}}'>
+                        <li>
+                            <span>
+                                name <br/>
+                                {{$as}}.
+                            </span>
+                        </li>  
+                    </a>
+                </div>
+                @endforeach
             </ul>
         </div>
     </div>
