@@ -11,13 +11,13 @@
     <div>
         <div>
             <ul id = 'ul'>
-                @foreach ($ak as $as)
+                @foreach ($aa as $as)
                 <div id = '' class="">
-                    <a href='{{route('message')}}'>
+                    <a href='{{route('message', $as->id )}}'>
                         <li>
                             <span>
                                 name <br/>
-                                {{$as}}.
+                                {{$as->name}}.
                             </span>
                         </li>  
                     </a>

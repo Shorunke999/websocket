@@ -14,6 +14,6 @@ class comments_model extends Model
         'message'
     ];
     public function usEr(){
-        return $this->belongsTo( User::class , 'user_id' );
+        return $this->belongsTo( User::class , 'receiver_id','sender_id' );
     }
 }

@@ -17,15 +17,18 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('online')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-           // $table->unsignedBigInteger('user_id');
+            /*$table->unsignedBigInteger('sender_id');
+            $table->unsignedBigInteger('receiver_id');*/
             $table->text('message');
+            $table ->foreignId("sender_id")->references('id')->on('users');
+            $table ->foreignId("receiver_id")->references('id')->on('users');
             $table->timestamps();
-            $table ->foreignId("user_id")->references('id')->on('users');
         });
     }
 
