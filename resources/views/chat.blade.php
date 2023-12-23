@@ -14,6 +14,7 @@
                     
             </ul>
             <form id="form">
+                @csrf
                 <label for="message">
                     ENTER YOUR message
                 </label>
