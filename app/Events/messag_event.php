@@ -13,7 +13,7 @@ use Illuminate\Queue\SerializesModels;
 class messag_event implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $message;
+    protected $message;
     /**
      * Create a new event instance.
      */
@@ -39,8 +39,8 @@ class messag_event implements ShouldBroadcast
             'message' => $this->message
         ];
     }
-    public function broadcastAs()
+   /* public function broadcastAs()
     {
         return 'message_event';
-    }
+    }*/
 }

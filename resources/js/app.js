@@ -10,35 +10,18 @@ form.addEventListener('submit',(e)=>{
    .then(response => {
       console.log('message handled');
       // Handle successful response here, if needed
-    })
-    .catch(error => {
-      // Handle error here
-      console.error('An error occurred:', error);
-
-      // Optionally, you can also check the error status and handle it accordingly
-      if (error.response) {
-        // The request was made, but the server responded with an error status
-        console.error('Response status:', error.response.status);
-        console.error('Response data:', error.response.data);
-      } else if (error.request) {
-        // The request was made, but no response was received
-        console.error('No response received:', error.request);
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.error('Error setting up the request:', error.message);
-      }
     });
     //echo object 
-   const channel = Echo.channel('first_channnel');
+   const channel = Echo.channel('first_channel');
    channel.subscribed(()=>{
    console.log('suscribed to channel');
-   }).listen('.message_event', (e)=>{
-   consloe.log(e);
+   }).listen('messag_event', (e)=>{
+   console.log(e);
    const ultag = document.getElementById('ul');
-   const li = document.createElement('li');
+   const Li = document.createElement('li');
    const newmessage = e.message;
-   li.textContent(newmessage);
-   ultag.append(li);
+   Li.textContent = newmessage;
+   ultag.append(Li);
       });//end of echo object.
 });   
 

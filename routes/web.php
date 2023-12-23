@@ -24,9 +24,10 @@ use App\Models\User;
 //});
 Route::post('/message', function (Request $req) {
     $message = $req->message;
+    broadcast(new messag_event($message));
     //$one = User::find(2); //this line is use to auth user and get it id...$kk = Auth::user();...$kk->id;
     //$one ->comment()->create(['message'=> $message]);
-    broadcast(new messag_event($message));
+   // broadcast(new messag_event($message));
     return null;
 });
 Route::get('/', function () {
@@ -39,4 +40,9 @@ Route::get('/', function () {
 Route::get('/message/{id}', function (Request $req) {
     return view('chat');//with the data collected;
 })->name('message');
+Route::get('/mes', function () {
+    $message = 'wale';
+    broadcast(new messag_event($message));
+    return ['broadcast'=>'sent'];//with the data collected;
+});
  
